@@ -1,0 +1,78 @@
+<body>
+  <div class="container">
+    <div class="title-box">
+      <h1 class="title">RS Estofados</h1>
+    </div>
+
+    <form [formGroup]="produtoForm" (ngSubmit)="criarProduto()" class="form">
+      <div class="form-group form-inline">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" formControlName="nome" required />
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" formControlName="endereco" required />
+      </div>
+
+      <div class="form-group form-inline">
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" formControlName="telefone" required />
+
+        <label for="usadoNovo">Usado/Novo:</label>
+        <select formControlName="usadoNovo" required>
+          <option value="Usado">Usado</option>
+          <option value="Novo">Novo</option>
+        </select>
+      </div>
+
+      <div class="form-group form-inline">
+        <label for="tamanho">Tamanho:</label>
+        <select id="tamanho" formControlName="tamanho" required>
+          <option *ngFor="let tamanho of tamanhos" [value]="tamanho">
+            {{ tamanho }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group form-inline">
+        <label for="retratilReclinavel">Retr/Recl:</label>
+        <select
+          id="retratilReclinavel"
+          formControlName="retratilReclinavel"
+          required>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group form-inline">
+        <label for="dataVenda">Data de Venda:</label>
+        <input
+          type="date"
+          id="dataVenda"
+          formControlName="dataVenda"
+          required
+        />
+      </div>
+
+      <div class="form-group form-inline">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" formControlName="email" required />
+      </div>
+
+      <button type="submit" class="btn">
+        <span style="font-size: 24px">&#x2714;</span>
+      </button>
+    </form>
+
+    <hr />
+
+    <h2>Produtos</h2>
+
+    <div>
+      <label for="search">Buscar:</label>
+      <input type="text" id="search" (input)="buscarProdutos($event)" />
+    </div>
+
+    <app-produto-list [produtos]="produtos" (editar)="atualizarProduto($event)" (excluir)="excluirProduto($event)"></app-produto-list>
+  </div>
+</body>

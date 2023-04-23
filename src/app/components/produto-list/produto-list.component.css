@@ -1,0 +1,67 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.table thead th {
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+.table tbody td {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.table tbody td:last-child {
+  text-align: center;
+}
+
+.table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table button {
+  margin: 0 2px;
+}
+/* Estilo para o botão de Excluir */
+.excluir-btn {
+  background-color: #e74c3c; /* Cor de fundo vermelha */
+  color: #fff; /* Cor do texto em branco */
+  border: none; /* Remover a borda padrão */
+  border-radius: 20px; /* Arredondar as bordas */
+  padding: 8px 16px; /* Adicionar espaçamento interno */
+  text-transform: uppercase; /* Transformar o texto em maiúsculas */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adicionar sombra 3D */
+  transition: background-color 0.3s ease; /* Adicionar transição */
+  display: inline-block;
+
+}
+
+.excluir-btn:hover {
+  background-color: #c0392b; /* Cor de fundo mais escura quando passar o mouse */
+}
+
+/* Estilo para o botão de Editar */
+.editar-btn {
+  background-color: #3498db; /* Cor de fundo azul */
+  color: #fff; /* Cor do texto em branco */
+  border: none; /* Remover a borda padrão */
+  border-radius: 20px; /* Arredondar as bordas */
+  padding: 8px 16px; /* Adicionar espaçamento interno */
+  text-transform: uppercase; /* Transformar o texto em maiúsculas */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adicionar sombra 3D */
+  transition: background-color 0.3s ease; /* Adicionar transição */
+margin-top: 5px;
+}
+
+.editar-btn:hover {
+  background-color: #2980b9; /* Cor de fundo mais escura quando passar o mouse */
+  display: inline-block;
+
+}
+

@@ -1,0 +1,37 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Telefone</th>
+      <th>Usado/Novo</th>
+      <th>Tamanho</th>
+      <th>Retr/Recl</th>
+      <th>Data de Venda</th>
+      <th>E-mail</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <td>{{ produto.nome }}</td>
+      <td>{{ produto.endereco }}</td>
+      <td>{{ produto.telefone }}</td>
+      <td>{{ produto.usadoNovo }}</td>
+      <td>{{ produto.tamanho }}</td>
+      <td>{{ !!produto.retratilReclinavel ? 'Sim' : 'Não' }}</td>
+      <td>{{ produto.dataVenda | date }}</td>
+      <td>{{ produto.email }}</td>
+      <td class="acoes">
+        <button class="excluir-btn btn btn-danger btn-sm" (click)="excluirProduto(produto.id ?? 0)">
+          Excluir
+        </button>
+
+        <button class="editar-btn btn btn-primary btn-sm mr-1" (click)="editarProduto(produto)">
+          Editar
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
